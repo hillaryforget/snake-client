@@ -1,4 +1,4 @@
-const net = require("net");
+const net = require('net');
 
 // establishes a connection with the game server
 const connect = function() {
@@ -8,13 +8,17 @@ const connect = function() {
   });
 
   // interpret incoming data as text
-  conn.setEncoding("utf8");
+  conn.setEncoding('utf8');
 
-  //sends msg to player to notify them of connection
+  //event handler sends msg to player to notify them of connection
   conn.on('connect', () =>
-    console.log("Successfully connected to game server"));
-  conn.write("Name: HAF");
-
+    console.log('Successfully connected to game server'));
+  conn.write('Name: HAF');
+  
+  //callback moves snake up until ded
+  setInterval(() => {
+    conn.write('Move: up');
+  }, 100);
 
   conn.on('data', (data) => {
     console.log(data);
@@ -23,7 +27,7 @@ const connect = function() {
   return conn;
 };
 
-console.log("Connecting ...");
+console.log('Connecting ...');
 connect();
 
 module.exports = {
