@@ -30,13 +30,9 @@ const connect = function() {
   return conn;
 };
 
-console.log('Connecting ...');
-connect();
-
 module.exports = {
   connect
 };
-
 
 /*Movement Commands:
 "Move: up" - move up one square (unless facing down)
