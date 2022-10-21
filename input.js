@@ -32,6 +32,10 @@ const handleUserInput = function(key) {
   if (key === moveRight) {
     conn.write('Move: right');
   } // D
+  //Messages
+  if (key === '1') {
+    conn.write('Say: NOM NOM NOM'); //canneed msg
+  }
 };
 
 //logs user input
