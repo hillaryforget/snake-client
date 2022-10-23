@@ -1,20 +1,21 @@
 //server
-const host = '50541';
-const port = 'localhost';
+const port = 50541;
+const host = 'localhost';
 
-// name
+//name
 const playerInitials = 'Name: HAF';
 
-// commands
+//commands
 const commands = {
   exit: '\u0003',
-  up: 'Move: up',
-  down: 'Move: down',
-  left: 'Move: left',
-  right: 'Move: right'
+  up: 'w',
+  down: 's',
+  left: 'a',
+  right: 'd',
+  banter: '1'
 };
 
-// messages
+//messages
 const messages = {
   banter: 'NOM NOM NOM'
 };

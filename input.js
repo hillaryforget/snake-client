@@ -2,7 +2,7 @@ const { commands } = require('./constants');
 
 let conn;
 
-// setup interface to handle user input from stdin
+//setup interface to handle user input from stdin
 const setupInput = function(connection) {
   conn = connection;
   const stdin = process.stdin;
@@ -13,30 +13,25 @@ const setupInput = function(connection) {
   return stdin;
 };
 
-const moveUp = 'w';
-const moveDown = 's';
-const moveLeft = 'a';
-const moveRight = 'd';
-
 const handleUserInput = function(key) {
   if (key === '\u0003') { //'\x03' also works
     process.exit();
-  } // exit with ctrl + c
-  if (key === moveUp) {
+  } //exit with ctrl + c
+  if (key === commands.up) {
     conn.write('Move: up');
-  } // w
-  if (key === moveDown) {
+  } //w
+  if (key === commands.down) {
     conn.write('Move: down');
-  } // s
-  if (key === moveLeft) {
+  } //s
+  if (key === commands.left) {
     conn.write('Move: left');
-  } // a
-  if (key === moveRight) {
+  } //a
+  if (key === commands.right) {
     conn.write('Move: right');
-  } // d
+  } //d
   //messages
-  if (key === '1') {
-    conn.write('Say: NOM NOM NOM'); //canneed msg
+  if (key === commands.banter) {
+    conn.write('Say: NOM NOM NOM'); //canned msg
   }
 };
 
